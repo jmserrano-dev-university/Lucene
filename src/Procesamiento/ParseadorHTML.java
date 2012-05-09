@@ -5,10 +5,7 @@
  */
 package Procesamiento;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,5 +46,20 @@ public class ParseadorHTML {
             }
         }
         return listaDocumentos;
+    }
+    
+    public static void escribirDocumentosDisco(List<Documento> listaDocumento,boolean ficheroEnEspanol) throws IOException{
+        String ruta = "";
+        if(ficheroEnEspanol){
+            ruta = Rutas.RUTA_ARCHIVOS_PROCESADOS_SPANISH;
+        }else{
+            ruta = Rutas.RUTA_ARCHIVOS_PROCESADOS_ENGLISH;
+        }
+        
+        for(int i = 0; i < listaDocumento.size(); i++){
+            BufferedWriter bw = new BufferedWriter(new FileWriter(ruta + listaDocumento.get(i).getNombreDocumento()));
+            bw.write(listaDocumento.get(i).getCuerpo());
+            bw.close();
+        }
     }
 }  

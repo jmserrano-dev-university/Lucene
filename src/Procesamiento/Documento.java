@@ -24,6 +24,10 @@ public class Documento {
         return _cuerpo;
     }
     
+    public void setCuerpo(String cuerpo){
+        _cuerpo = cuerpo;
+    }
+    
     public String getNombreDocumento(){
         return _nombreDocumento;
     }

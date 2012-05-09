@@ -53,7 +53,7 @@ public class SpanishAnalyzer extends Analyzer{
     }
     
     public SpanishAnalyzer(){
-        this("spanishST.txt");
+        this(Rutas.RUTA_STOP_WORDS_SPANISH);
     }
 
     /** Creo el analizador */

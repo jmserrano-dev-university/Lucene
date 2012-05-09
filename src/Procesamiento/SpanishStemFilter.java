@@ -19,19 +19,6 @@ public final class SpanishStemFilter extends TokenFilter {
         super(in);
         stemmer = new SpanishStemmer(); // Aplica el stemmer para español de Snowball
     }
-
-//    @Override
-//    public boolean incrementToken() throws IOException {
-//       if(!input.incrementToken()){
-//           return false;
-//       }else{
-//           stemmer.setCurrent(token.term());
-//           stemmer.stem();
-//           String encoded = stemmer.getCurrent();
-//           token.setTermBuffer(encoded);
-//           return true;
-//       }
-//    }
     
     /** Devuelve el siguiente Token tras aplicar el stemmer*/
     public final Token next() throws IOException {
